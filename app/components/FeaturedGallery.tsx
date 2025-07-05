@@ -21,9 +21,9 @@ export default function FeaturedGallery() {
   if (!images.length) return null;
 
   return (
-    <section className="py-10 bg-white">
+    <section className="py-16 bg-[#ECE2D0]">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-pink-600">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#3D211A]">
           Uitgelichte Foto's
         </h2>
 
@@ -31,7 +31,7 @@ export default function FeaturedGallery() {
           {images.map((img) => (
             <div
               key={img._id}
-              className="overflow-hidden rounded-2xl shadow-md border border-pink-100 transition hover:shadow-lg"
+              className="overflow-hidden rounded-2xl shadow-md border border-[#CBB799] transition hover:shadow-lg bg-white"
             >
               <img
                 src={urlFor(img.image).width(600).height(400).fit("crop").url()}
@@ -39,7 +39,7 @@ export default function FeaturedGallery() {
                 className="w-full h-full object-cover aspect-[4/3]"
               />
               {img.caption && (
-                <p className="p-3 text-sm text-center text-gray-700">
+                <p className="p-3 text-sm text-center text-[#6F4D38]">
                   {img.caption}
                 </p>
               )}
@@ -50,7 +50,7 @@ export default function FeaturedGallery() {
         <div className="mt-12 text-center">
           <Link
             href="/gallery"
-            className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300"
+            className="inline-block bg-[#6F4D38] hover:bg-[#A07856] text-[#ECE2D0] font-semibold py-3 px-8 rounded-full shadow-md transition duration-300"
           >
             Bekijk alle foto's
           </Link>

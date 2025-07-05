@@ -29,9 +29,9 @@ export default function FeaturedServices() {
   if (!services.length) return null
 
   return (
-    <section className="py-6 bg-white">
+    <section className="py-16 bg-[#ECE2D0]">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-pink-600 mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#3D211A] mb-10">
           Populaire Diensten
         </h2>
 
@@ -44,7 +44,7 @@ export default function FeaturedServices() {
         <div className="mt-12 text-center">
           <Link
             href="/services"
-            className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition duration-300"
+            className="inline-block bg-[#6F4D38] hover:bg-[#A07856] text-[#ECE2D0] font-semibold py-3 px-8 rounded-full shadow-md transition duration-300"
           >
             Bekijk alle diensten
           </Link>

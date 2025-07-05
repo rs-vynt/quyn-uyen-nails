@@ -66,11 +66,11 @@ export default function ServiceList({ category }: ServiceListProps) {
 
   return (
     <section
-      className={`${isFilteredMode ? "pt-4" : "pt-16"} pb-20 bg-[#fffaf9]`}
+      className={`${isFilteredMode ? "pt-4" : "pt-16"} pb-20 bg-[#ECE2D0]`}
     >
       <div className="max-w-6xl mx-auto px-4">
         <h2
-          className={`text-center font-bold mb-10 text-pink-600 ${
+          className={`text-center font-bold mb-10 text-[#6F4D38] ${
             isFilteredMode ? "text-3xl" : "text-4xl"
           }`}
         >
@@ -99,13 +99,13 @@ export default function ServiceList({ category }: ServiceListProps) {
         </div>
 
         {!isLoading && visibleServices.length === 0 && (
-          <div className="text-center text-gray-500 mt-10">
+          <div className="text-center text-[#A07856] mt-10 italic">
             Geen diensten gevonden.
           </div>
         )}
 
         {isLoading && (
-          <div className="text-center text-pink-500 mt-10 font-medium">
+          <div className="text-center text-[#CBB799] mt-10 font-medium">
             Laden...
           </div>
         )}
@@ -114,7 +114,7 @@ export default function ServiceList({ category }: ServiceListProps) {
           <div className="text-center mt-10">
             <button
               onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_LOAD)}
-              className="px-6 py-3 bg-pink-500 text-white rounded-full font-medium hover:bg-pink-600 transition"
+              className="px-6 py-3 bg-[#CBB799] text-[#3D211A] rounded-full font-medium border border-[#A07856] hover:bg-[#A07856] hover:text-white transition duration-300 ease-in-out hover:scale-[1.02]"
             >
               Laad Meer
             </button>

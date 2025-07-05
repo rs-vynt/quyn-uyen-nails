@@ -4,16 +4,20 @@ interface Props {
   onSelect: (category: string | null) => void;
 }
 
-export default function CategoryFilter({ categories, activeCategory, onSelect }: Props) {
+export default function CategoryFilter({
+  categories,
+  activeCategory,
+  onSelect,
+}: Props) {
   return (
     <div className="flex flex-wrap justify-center gap-3 mb-10">
       <button
         onClick={() => onSelect(null)}
         className={`px-4 py-2 rounded-full text-sm font-medium border transition cursor-pointer ${
           !activeCategory
-            ? "bg-pink-500 text-white"
-            : "bg-white text-gray-700 border-gray-300"
-        } hover:bg-pink-100`}
+            ? "bg-[#6F4D38] text-[#ECE2D0] border-[#A07856]"
+            : "bg-[#ECE2D0] text-[#3D211A] border-[#CBB799]"
+        } hover:bg-[#CBB799]/40`}
       >
         Alles
       </button>
@@ -23,9 +27,9 @@ export default function CategoryFilter({ categories, activeCategory, onSelect }:
           onClick={() => onSelect(cat)}
           className={`px-4 py-2 rounded-full text-sm font-medium border transition cursor-pointer ${
             activeCategory === cat
-              ? "bg-pink-500 text-white"
-              : "bg-white text-gray-700 border-gray-300"
-          } hover:bg-pink-100`}
+              ? "bg-[#6F4D38] text-[#ECE2D0] border-[#A07856]"
+              : "bg-[#ECE2D0] text-[#3D211A] border-[#CBB799]"
+          } hover:bg-[#CBB799]/40`}
         >
           {cat}
         </button>

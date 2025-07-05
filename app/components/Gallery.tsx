@@ -23,7 +23,6 @@ export default function Gallery({ category }: Props) {
 
   const isFilteredMode = !!category;
 
-  // Fetch data once
   useEffect(() => {
     if (allImages.length > 0) return;
 
@@ -57,13 +56,13 @@ export default function Gallery({ category }: Props) {
 
   return (
     <section
-      className={`${isFilteredMode ? "pt-4" : "pt-16"} pb-20 bg-[#fffaf9]`}
+      className={`${isFilteredMode ? "pt-4" : "pt-16"} pb-20 bg-[#ECE2D0]`}
     >
       <div className="max-w-6xl mx-auto px-4">
         <h1
           className={`${
             isFilteredMode ? "text-3xl" : "text-4xl"
-          } font-bold text-center text-pink-600 mb-10`}
+          } font-bold text-center text-[#3D211A] mb-10`}
         >
           Galerij
         </h1>
@@ -79,7 +78,6 @@ export default function Gallery({ category }: Props) {
           />
         )}
 
-        {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleImages.map((img) => {
             const thumbUrl = urlFor(img.image)
@@ -93,7 +91,7 @@ export default function Gallery({ category }: Props) {
               <div
                 key={img._id}
                 onClick={() => setSelectedImage(img)}
-                className="relative cursor-pointer rounded-2xl overflow-hidden shadow-md border border-pink-100 transition hover:shadow-xl"
+                className="relative cursor-pointer rounded-2xl overflow-hidden shadow-md border border-[#CBB799] transition hover:shadow-xl bg-white"
               >
                 <img
                   loading="lazy"
@@ -101,7 +99,6 @@ export default function Gallery({ category }: Props) {
                   alt={img.caption || ""}
                   className="w-full h-full object-cover aspect-[4/3]"
                 />
-                {/* Preload full-size image on hover */}
                 <link rel="preload" as="image" href={fullUrl} />
               </div>
             );
@@ -109,13 +106,13 @@ export default function Gallery({ category }: Props) {
         </div>
 
         {!isLoading && visibleImages.length === 0 && (
-          <div className="text-center text-gray-500 mt-10">
+          <div className="text-center text-[#A07856] mt-10">
             Geen afbeeldingen beschikbaar.
           </div>
         )}
 
         {isLoading && (
-          <div className="text-center text-pink-500 mt-10 font-medium">
+          <div className="text-center text-[#6F4D38] mt-10 font-medium">
             Laden...
           </div>
         )}
@@ -124,7 +121,7 @@ export default function Gallery({ category }: Props) {
           <div className="text-center mt-10">
             <button
               onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_LOAD)}
-              className="px-6 py-3 bg-pink-500 text-white rounded-full font-medium hover:bg-pink-600 transition"
+              className="px-6 py-3 bg-[#A07856] text-white rounded-full font-medium hover:bg-[#6F4D38] transition"
             >
               Meer laden
             </button>
@@ -132,19 +129,18 @@ export default function Gallery({ category }: Props) {
         )}
       </div>
 
-      {/* Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4"
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="bg-white max-w-3xl w-full rounded-2xl p-4 relative shadow-xl animate-fadeIn"
+            className="bg-[#fffaf9] max-w-3xl w-full rounded-2xl p-4 relative shadow-xl animate-fadeIn border border-[#CBB799]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition p-2 cursor-pointer"
+              className="absolute top-4 right-4 text-[#6F4D38] hover:text-[#3D211A] transition p-2 cursor-pointer"
               aria-label="Close modal"
             >
               <X size={24} />
@@ -157,7 +153,7 @@ export default function Gallery({ category }: Props) {
                 className="w-full rounded-xl mb-4"
               />
               {selectedImage.caption && (
-                <p className="text-center text-gray-600 px-2">
+                <p className="text-center text-[#6F4D38] px-2">
                   {selectedImage.caption}
                 </p>
               )}
@@ -166,7 +162,6 @@ export default function Gallery({ category }: Props) {
         </div>
       )}
 
-      {/* Animations */}
       <style jsx>{`
         .animate-fadeIn {
           animation: fadeInScale 0.3s ease-out;

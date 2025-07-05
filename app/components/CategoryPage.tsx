@@ -26,12 +26,12 @@ export default async function CategoryPage({ category }: Props) {
   }
 
   return (
-    <section className="pt-32 pb-20 bg-[#fffaf9]">
+    <section className="pt-32 pb-20 bg-[#ECE2D0]">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-pink-600 text-center mb-2">
+        <h1 className="text-4xl font-bold text-[#3D211A] text-center mb-2">
           {categoryLabels[safeCategory]}
         </h1>
-        <p className="text-center text-gray-500 max-w-xl mx-auto mb-10">
+        <p className="text-center text-[#6F4D38] max-w-xl mx-auto mb-10">
           Onze premium diensten voor jouw {categoryLabels[safeCategory].toLowerCase()}.
         </p>
 

@@ -17,7 +17,7 @@ export default function Wrapper({ children }: AuthWrapperProps) {
   }
 
   return (
-    <main className="bg-[#fffaf9] text-gray-800">
+    <main className="bg-[#ECE2D0] text-gray-800">
       <Header />
       {children}
       <Footer />
